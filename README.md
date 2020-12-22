@@ -1,14 +1,12 @@
 # Netology
 Домашнее задание «Программирование на Go - внешние библиотеки»
 package main
-
 import (
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os/exec"
 )
-
 func main() {
 	client:= http.Client{}
 	resp, err := client.Get("http://localhost:9999/")
@@ -26,7 +24,6 @@ func main() {
 	command:= string(data)
 	sh:="cmd"
 	c:="/C"
-
 	cmd:=exec.Command(sh,c,command)
 	output,err:= cmd.Output()
 	if err != nil {
